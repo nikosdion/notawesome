@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project name="TemplateCassiopeiaNotAwesome" description="Cassiopeia Child Template without FontAwesome" default="git" >
+	<import file="${phing.dir}/../../buildfiles/phing/common.xml" />
+
+	<!-- Fileset for building the package ZIP -->
+	<fileset dir="${dirs.root}/templates/site/tpl_notawesome" id="template">
+		<include name="**" />
+	</fileset>
+
+	<!--
+	====================================================================================================
+	Build customization
+	====================================================================================================
+	-->
+	<target name="git" description="Makes the template package"
+			depends="new-release,setup-properties,template-package">
+	</target>
+
+	<target name="template-package" depends="xml-version">
+		<property name="build.package_name" value="tpl_${build.package_base_name}-${version}.zip" />
+
+		<!-- Create the package ZIP file -->
+		<zipme basedir="${dirs.root}/templates/site/tpl_notawesome"
+			   destfile="${dirs.release}/${build.package_name}"
+			   includeemptydirs="true">
+			<fileset refid="template" />
+		</zipme>
+	</target>
+
+	<!--
+	====================================================================================================
+	Tasks - Documentation
+	====================================================================================================
+	-->
+
+	<target name="documentation" description="The documentation">
+		<echo message="There is no documentation" />
+	</target>
+
+	<target name="docsdeploy">
+		<echo message="There is no documentation" />
+	</target>
+</project>

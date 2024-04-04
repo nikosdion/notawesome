@@ -1,0 +1,19 @@
+{
+	"$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+	"name": "mod_awesome",
+	"version": "1.0.0",
+	"description": "Awesome",
+	"license": "GPL-3.0-or-later",
+	"assets": [
+		{
+			"name": "mod_awesome.frontend",
+			"description": "CSS for the frontend module",
+			"type": "style",
+			"uri": "mod_awesome/awesome.css",
+			"dependencies": [
+				"fontawesome"
+			]
+		}
+
+	]
+}
